@@ -2,21 +2,225 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Offense Stats - @ Invaders</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
-        th { background-color: #f2f2f2; }
-        h1, h2, h3 { color: #333; }
-    </style>
+    <title>Offense Stats</title>
+<style>
+    body { 
+        font-family: Arial, sans-serif; 
+        margin: 20px; 
+        font-size: 80%;   /* Globale Skalierung */
+    }
+    table { 
+        width: 100%; 
+        border-collapse: collapse; 
+        margin-bottom: 20px; 
+        font-size: 90%;   /* Tabellen etwas kleiner */
+    }
+    th, td { 
+        border: 1px solid #dddddd; 
+        text-align: left; 
+        padding: 6px;    /* Weniger Padding */
+    }
+    th { 
+        background-color: #f2f2f2; 
+    }
+    .tab { 
+        display: inline-block; 
+        margin-right: 8px; 
+        padding: 8px 16px; 
+        background-color: #f1f1f1; 
+        cursor: pointer; 
+        border-radius: 5px 5px 0 0; 
+        font-size: 90%;
+    }
+    .tab.active { 
+        background-color: #ddd; 
+        font-weight: bold; 
+    }
+    .hidden { 
+        display: none; 
+    }
+    .sheet-content { 
+        border: 1px solid #ddd; 
+        padding: 16px; 
+        border-top: none; 
+    }
+</style>
+</style>
+    <script>
+        function showSheet(sheetId) {
+            var sheets = document.getElementsByClassName('sheet-content');
+            for (var i = 0; i < sheets.length; i++) {
+                sheets[i].classList.add('hidden');
+            }
+            document.getElementById(sheetId).classList.remove('hidden');
+
+            var tabs = document.getElementsByClassName('tab');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            document.getElementById(sheetId + '-tab').classList.add('active');
+        }
+    </script>
 </head>
 <body>
-    <h1>Offense Stats</h1>
-    <h2>Spiel: @ Invaders</h2>
-
-    <h3>Runningbacks</h3>
-    <table border="1" class="dataframe">
+    <h1>Offense Stats Übersicht</h1>
+    <div>
+<div id="sheet0-tab" class="tab active" onclick="showSheet('sheet0')">vs Invaders</div>
+<div id="sheet1-tab" class="tab " onclick="showSheet('sheet1')">@ Invaders</div>
+<div id="sheet0" class="sheet-content ">
+<h2>Blatt: vs Invaders</h2>
+<h3>Runningbacks</h3>
+<table border="1" class="dataframe">
+  <tbody>
+    <tr>
+      <td>Att</td>
+      <td>Tot</td>
+      <td>Avg</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>63</td>
+      <td>2.73913</td>
+    </tr>
+  </tbody>
+</table><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Name</th>
+      <th>Total Yards</th>
+      <th>TD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Romano #29</td>
+      <td>23</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Timon #5</td>
+      <td>29</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Sam #11</td>
+      <td>5</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Joel #19</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Erich #34</td>
+      <td>-2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Richi #47</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Carl #40</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table><h3>Receivers</h3>
+<table border="1" class="dataframe">
+  <tbody>
+    <tr>
+      <td>Comp</td>
+      <td>Att</td>
+      <td>Tot</td>
+      <td>Avg</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>NaN</td>
+      <td>170</td>
+      <td>13.076923</td>
+    </tr>
+  </tbody>
+</table><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Name</th>
+      <th>Total Yards</th>
+      <th>TD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Marc #1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Silvio #10</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Carl #40</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Nico #26</td>
+      <td>38</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Marco #81</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Phillip #85</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Dom #89</td>
+      <td>111</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table><h3>Passing</h3>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Name</th>
+      <th>Completions</th>
+      <th>Attempts</th>
+      <th>Total Yards</th>
+      <th>TD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Timon</td>
+      <td>13</td>
+      <td>-</td>
+      <td>170</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Luca</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+<div id="sheet1" class="sheet-content hidden">
+<h2>Blatt: @ Invaders</h2>
+<h3>Runningbacks</h3>
+<table border="1" class="dataframe">
   <tbody>
     <tr>
       <td>Att</td>
@@ -29,8 +233,7 @@
       <td>7.833333</td>
     </tr>
   </tbody>
-</table>
-    <table border="1" class="dataframe">
+</table><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th>Name</th>
@@ -75,10 +278,8 @@
       <td>0</td>
     </tr>
   </tbody>
-</table>
-
-    <h3>Receivers</h3>
-    <table border="1" class="dataframe">
+</table><h3>Receivers</h3>
+<table border="1" class="dataframe">
   <tbody>
     <tr>
       <td>Comp</td>
@@ -93,8 +294,7 @@
       <td>14.5</td>
     </tr>
   </tbody>
-</table>
-    <table border="1" class="dataframe">
+</table><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th>Name</th>
@@ -139,10 +339,8 @@
       <td>1</td>
     </tr>
   </tbody>
-</table>
-
-    <h3>Passing</h3>
-    <table border="1" class="dataframe">
+</table><h3>Passing</h3>
+<table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th>Name</th>
@@ -168,7 +366,8 @@
       <td>1</td>
     </tr>
   </tbody>
-</table>
+</table></div>
 
+</div>
 </body>
 </html>
